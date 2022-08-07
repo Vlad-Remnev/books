@@ -1,9 +1,12 @@
 require("dotenv").config();
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 const books = require("./books.json");
 
 const app = express();
 const PORT = process.env.PORT || 3001
+
+app.use(cors());
 
 app.get("/books", (req, res) => {
   res.json({
