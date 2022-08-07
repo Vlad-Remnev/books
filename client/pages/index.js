@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Layout from "../components/Layout";
 const API_URL = "http://localhost:3001";
 
 const IndexPage = () => {
@@ -13,9 +14,8 @@ const IndexPage = () => {
       })
   }, []);
 
-  console.log({books})
   return (
-    <div className="container">
+    <Layout>
       <div className="row">
         {books.map(book => (
           <div key={book.title} className="col-md-4">
@@ -28,7 +28,7 @@ const IndexPage = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 } 
 
